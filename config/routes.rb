@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources "activities"
   resources "tasks"
   resources "users"
+  resources "sessions"
 
   resources "sessions"
+  get("/logout", {:controller => "sessions", :action => "destroy"})
+  get("/login", {:controller => "sessions", :action => "new"})
   # get("/sessions", {:controller => "sessions", :action => "index"})
   # get("/sessions/:id", {:controller => "sessions", :action => "show"})
   # get("/sessions/new", {:controller => "sessions", :action => "new"})
